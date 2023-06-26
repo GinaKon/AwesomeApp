@@ -3,7 +3,7 @@ import { Text, StyleSheet } from 'react-native';
 
 export default function MyText({content}) {
   return (
-    <Text style={styles.text}>{content}</Text>
+    <Text style={styles.text}>{'Magic!'}</Text>
   );
 }
 
@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    textDecorationLine: 'underline',
     margin: 50,
   }
 });
