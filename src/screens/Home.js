@@ -1,4 +1,7 @@
 import { Button, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import MyButton from '../components/MyButton';
+import { useSelector } from 'react-redux';
+import LogoutButton from '../components/LogoutButton';
 
 const colorPalette = {
   tea_rose_red: '#eac8caff',
@@ -10,13 +13,15 @@ const colorPalette = {
 
 
 export default function HomePage({ navigation }) {
+  let username = useSelector(s => s.username);
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Welcome to the Mobile App +Masters</Text>
-      <Button title='Click to go to the about page' color={colorPalette} onPress={() => navigation.navigate('AboutUs')}></Button>
-      {/* <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('AboutUs')}>
+      <MyButton title='Click me to change title' color="#eac8caff"></MyButton>
+      <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('AboutUs')}>
         <Text style={styles.textStyle}>Click here to go to the about page</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
+      <LogoutButton title='Click me to logout' color='#8d89a6ff'></LogoutButton>
     </View>
   );
 }
@@ -26,7 +31,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
-    backgroundColor:'#e6c0e9ff',
     margin: 20,
     color:'grey'
   },
@@ -43,7 +47,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: '#ffdd80',
+    backgroundColor: '#eac8caff',
     margin: 10,
   },
   textStyle: {
@@ -51,7 +55,7 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'normal',
     letterSpacing: 0.25,
-    color: '#eac8caff',
+    color: '#8d89a6ff',
   },
 });
 
