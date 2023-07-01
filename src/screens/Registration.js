@@ -6,10 +6,7 @@ export default function RegistrationScreen({ navigation }) {
   const [password, setPassword] = useState('');
 
   const handleRegister = () => {
-    // Perform registration logic here, such as storing the user credentials
-    // You can use a database or any other storage mechanism for this purpose
-
-    // After successful registration, navigate to the login page
+  
     navigation.navigate('Home');
   };
 
