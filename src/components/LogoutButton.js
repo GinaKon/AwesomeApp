@@ -1,12 +1,32 @@
-import React from 'react';
-import { View, Button } from 'react-native';
+import { useState, useEffect } from "react";
+import { View, Button, Alert } from 'react-native';
+import { useDispatch } from 'react-redux';
 
-const LogoutButton = ({ onPress }) => {
-  return (
-    <View>
-      <Button title="Logout" onPress={onPress} />
-    </View>
-  );
+const colorPalette = {
+  tea_rose_red: '#eac8caff',
+  pale_purple: '#f2d5f8ff',
+  pink_lavender: '#e6c0e9ff',
+  lilac: '#bfabcbff',
+  cool_gray: '#8d89a6ff',
 };
 
-export default LogoutButton;
+export default function LogoutButton({ title, color }) {
+  const [newTitle, setNewTitle] = useState(title);
+  const [newColor, setNewColor] = useState(color);
+
+  return (
+    <View>
+      <Button
+        title={newTitle}
+        color={newColor}
+        onPress={() => {
+          setNewTitle("Logout Successful");
+          setNewColor('#eac8caff'); 
+        }}
+      />
+    </View>
+  );
+}
+
+
+
