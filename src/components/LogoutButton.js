@@ -10,13 +10,9 @@ const colorPalette = {
   cool_gray: '#8d89a6ff',
 };
 
-export default function MyButton({ title, color }) {
+export default function LogoutButton({ title, color }) {
   const [newTitle, setNewTitle] = useState(title);
   const [newColor, setNewColor] = useState(color);
-
-  useEffect(() => {
-    Alert.alert('Component rendered');
-  }, []);
 
   return (
     <View>
@@ -24,10 +20,13 @@ export default function MyButton({ title, color }) {
         title={newTitle}
         color={newColor}
         onPress={() => {
-          setNewTitle("Login Successful");
+          setNewTitle("Logout Successful");
           setNewColor('#eac8caff'); 
         }}
       />
     </View>
   );
 }
+
+
+
